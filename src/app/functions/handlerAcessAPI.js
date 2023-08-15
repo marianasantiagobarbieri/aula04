@@ -28,7 +28,7 @@ const getUserAuthenticated = (users) => {
     let userAutenticado = {}
 
     {lista.map(user => {
-        if (users.name === users.name && user.email === user.email && user.password === user.password && user.token === user.token) {
+        if (users.email === users.email && user.password === user.password ) {
             userAutenticado = user;
         }
     })
