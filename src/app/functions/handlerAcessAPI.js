@@ -24,12 +24,12 @@ const lista = [
     }
 ]
 
-const getUserAuthenticated = (users) => {
+const getUserAuthenticated = (userLogin) => {
     let userAutenticado = {}
 
     {
         lista.map(user => {
-            if (users.email === users.email && user.password === user.password) {
+            if (userLogin.email === userLogin.email && user.password === user.password) {
                 userAutenticado = user;
             }
         })
