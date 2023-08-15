@@ -27,14 +27,15 @@ const lista = [
 const getUserAuthenticated = (users) => {
     let userAutenticado = {}
 
-    {lista.map(user => {
-        if (users.email === users.email && user.password === user.password ) {
-            userAutenticado = user;
-        }
-    })
-    return userAutenticado;
+    {
+        lista.map(user => {
+            if (users.email === users.email && user.password === user.password) {
+                userAutenticado = user;
+            }
+        })
+        return userAutenticado;
 
-}
+    }
 }//receber o usuario
 
 
