@@ -2,7 +2,7 @@
 import { useState } from "react";
 import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
-import './globals.css' 
+import './globals.css'
 
 export default function Login() {
   const [user, setUser] = useState({
@@ -22,26 +22,26 @@ export default function Login() {
   }
   return (
     <div className='LoginBox'>
-    <div className='LoginContainer'>
-      <h1>Login</h1>
-      <form onSubmit={handlerLogin}  className='LoginForm'>
-        <input
-         className='LoginInput'
-          placeholder='E-mail'
-          type="email"
-          onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
-        </input>
-        <span className='LoginSpam'></span>
-        <input
-         className='LoginInput'
-          placeholder='Senha'
-          type='password'
-          onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
-        </input>
-        <span className='LoginSpam'></span>
-        <button className='LoginBotaoCadastrar'>Entrar</button>
-      </form>
-    </div>
+      <div className='LoginContainer'>
+        <h1>Login</h1>
+        <form onSubmit={handlerLogin} className='LoginForm'>
+          <input
+            className='LoginInput'
+            placeholder='E-mail'
+            type="email"
+            onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
+          </input>
+          <span className='LoginSpam'></span>
+          <input
+            className='LoginInput'
+            placeholder='Senha'
+            type='password'
+            onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
+          </input>
+          <span className='LoginSpam'></span>
+          <button className='LoginBotaoCadastrar'>Entrar</button>
+        </form>
+      </div>
     </div>
   )
 }
