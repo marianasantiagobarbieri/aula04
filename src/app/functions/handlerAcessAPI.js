@@ -25,14 +25,16 @@ const lista = [
 ]
 
 const getUserAuthenticated = (users) => {
-    (lista.map(user => {
-        if (user.name === user.name && user.email === user.email && user.password === user.password && user.token === user.token) {
-            return users;
+    let userAutenticado = {}
+
+    {lista.map(user => {
+        if (users.name === users.name && user.email === user.email && user.password === user.password && user.token === user.token) {
+            userAutenticado = user;
         }
-        else {
-            return null;
-        }
-    }))
+    })
+    return userAutenticado;
+
+}
 }//receber o usuario
 
 
