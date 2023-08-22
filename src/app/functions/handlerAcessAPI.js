@@ -25,7 +25,7 @@ const lista = [
 ]
 
 const getUserAuthenticated = (userLogin) => {
-    let userAutenticado = {}
+    let userAutenticado = {};
 
     {
         lista.map(user => {
