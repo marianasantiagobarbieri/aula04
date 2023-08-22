@@ -16,10 +16,13 @@ export default function Login() {
   const handlerLogin = async (e) => {
     e.preventDefault();
     try {
-      await handlerAcessUser(user);
+      const userAuth = await handlerAcessUser(user);
+      if(userAuth.token === undefined) {
+        toast.error("Erro no e-mail ou na senha! :(");
+      }
       push('/pages/dashboard');
     } catch {
-      refresh();
+      toast.error("Erro na aplicação!");
     }
   }
   return (
@@ -43,6 +46,7 @@ export default function Login() {
           <span className='LoginSpam'></span>
           <button className='LoginBotaoCadastrar'>Entrar</button>
         </form>
+        <ToastContainer />
       </div>
     </div>
   )
