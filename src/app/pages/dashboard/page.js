@@ -9,7 +9,7 @@ export default async function Dashboard() {
         <div>
           <h1>Usuários:</h1>
           <Suspense fallback={<p>Carregando...</p>}>
-           <ListaDeUsuarios listar={{listar}}/>
+           <ListaDeUsuarios listar={listar}/>
            </Suspense>
         </div>
     )
