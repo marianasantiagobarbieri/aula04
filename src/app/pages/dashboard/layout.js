@@ -19,12 +19,15 @@ export default function DashboardLayout({children}) {
     }
     return(
         <div>
+            <nav>
+                <ul>
          <h1>Dashboard</h1>
-         <Link href="/pages/dashboard"> Home</Link>
+         <Link href="/"> Home</Link>
          <Link href="/pages/dashboard/alter"> Alterar </Link>
-         <Link href="/pages/dashboard/register"> Register</Link>
+         <Link href="/pages/dashboard/register"> Registrar</Link>
          <button onClick={sair}>Sair</button>
-
+         </ul>
+         </nav>
          
         
          <div>{children}</div>
