@@ -2,14 +2,9 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import '@/app/globals.css';
 
-
-export const metadata = {
-    title: 'Register users',
-    description: 'Project for class PTAC',
-  }
-
-export default function DashboardLayout({children}) {
+export default function DashboardLayout({ children }) {
     const { push } = useRouter();
 
     const sair = (e) => {
@@ -17,20 +12,20 @@ export default function DashboardLayout({children}) {
         Cookies.remove('token');
         push('/');
     }
-    return(
+    return (
         <div>
             <nav>
                 <ul>
-         <h1>Dashboard</h1>
-         <Link href="/"> Home</Link>
-         <Link href="/pages/dashboard/alter"> Alterar </Link>
-         <Link href="/pages/dashboard/register"> Registrar</Link>
-         <button onClick={sair}>Sair</button>
-         </ul>
-         </nav>
-         
-        
-         <div>{children}</div>
+                    <h1>Dashboard</h1>
+                    <Link href="/"> Home</Link>
+                    <Link href="/pages/dashboard/alter"> Alterar </Link>
+                    <Link href="/pages/dashboard/register"> Registrar</Link>
+                    <button onClick={sair}>Sair</button>
+                </ul>
+            </nav>
+
+
+            <div>{children}</div>
         </div>
     )
 }
