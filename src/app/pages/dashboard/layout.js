@@ -13,14 +13,15 @@ export default function DashboardLayout({ children }) {
         push('/');
     }
     return (
-        <div>
+        <div className="containerDashboardLayout">
             <nav>
+                <div className="titleDashboardLayout"> <span>Dashboard</span> </div>
                 <ul>
-                    <h1>Dashboard</h1>
-                    <Link href="/"> Home</Link>
-                    <Link href="/pages/dashboard/alter"> Alterar </Link>
-                    <Link href="/pages/dashboard/register"> Registrar</Link>
-                    <button onClick={sair}>Sair</button>
+
+                    <li><Link href="/"> Home</Link></li>
+                    <li><Link href="/pages/dashboard/alter"> Alterar </Link></li>
+                    <li><Link href="/pages/dashboard/register"> Registrar</Link></li>
+                    <button className="" onClick={sair}>Sair</button>
                 </ul>
             </nav>
 
