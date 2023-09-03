@@ -21,8 +21,9 @@ export default function DashboardLayout({ children }) {
                     <li><Link href="/"> Home</Link></li>
                     <li><Link href="/pages/dashboard/alter"> Alterar </Link></li>
                     <li><Link href="/pages/dashboard/register"> Registrar</Link></li>
-                    <button className="" onClick={sair}>Sair</button>
                 </ul>
+                
+                <button className="LoginBotaoCadastrar2" onClick={sair}>Sair</button>
             </nav>
 
 
