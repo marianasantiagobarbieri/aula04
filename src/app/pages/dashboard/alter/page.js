@@ -8,7 +8,7 @@ export default async function AlterDashboard() {
     return (
         <div className='LoginBox'>
             <div className='LoginContainer'>
-                <h1>Alterar Login</h1>
+                <h1>Alterar Usuário</h1>
                 <form /*onSubmit={handlerLogin}*/ className='LoginForm'>
                     <input
                         className='LoginInput'

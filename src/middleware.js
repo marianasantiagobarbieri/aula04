@@ -4,11 +4,11 @@ import { validateToken } from "./app/functions/validateToken";
 
 export const middleware = (request) => {
 
-    const token = request.cookies.get('token')?.value; //pegando o cookie c/ nome token
+    const token = request.cookies.get('token')?.value; //pegando o valor do cookie c/ nome token
     const urlLogin = new URL('/', request.url); //acessando a rota Login
-    const isTokenValidated = validateToken(token);
+    const isTokenValidated = validateToken(token); // informando o token e verificando se é válido
 
-    if (!isTokenValidated || !token) { //se ñ tiver um token validado ou se ñ tiver token
+    if (!isTokenValidated || !token) { //se ñ tiver um retorno da verificação for falso ou se ñ tiver token
         if (request.nextUrl.pathname === '/pages/dashboard') { //verificando se o servidor está renderizando a rota Dashboard
             return NextResponse.redirect(urlLogin); // usuário redirecionado p/ a página de Login/Home
         }

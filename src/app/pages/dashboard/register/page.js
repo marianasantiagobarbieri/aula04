@@ -11,7 +11,7 @@ export default async function RegisterDashboard() {
     return (
         <div className='LoginBox'>
             <div className='LoginContainer'>
-                <h1>Registrar Login</h1>
+                <h1>Registrar Usuário</h1>
                 <form /*onSubmit={handlerLogin}*/ className='LoginForm'>
                     <input
                         className='LoginInput'

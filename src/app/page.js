@@ -28,8 +28,18 @@ export default function Login() {
   return (
     <div className='LoginBox'>
       <div className='LoginContainer'>
+
         <h1>Login</h1>
+
         <form onSubmit={handlerLogin} className='LoginForm'>
+          <input
+            className='LoginInput'
+            placeholder='Nome:'
+            type="nome"
+            onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
+          </input>
+          <span className='SpamRegister'></span>
+
           <input
             className='LoginInput'
             placeholder='E-mail'
@@ -37,6 +47,7 @@ export default function Login() {
             onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
           </input>
           <span className='LoginSpam'></span>
+
           <input
             className='LoginInput'
             placeholder='Senha'
@@ -44,8 +55,10 @@ export default function Login() {
             onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
           </input>
           <span className='LoginSpam'></span>
+
           <button className='LoginBotaoCadastrar'>Entrar</button>
         </form>
+        
         <ToastContainer />
       </div>
     </div>
