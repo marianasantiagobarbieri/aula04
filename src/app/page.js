@@ -11,6 +11,8 @@ export default function Login() {
     email: '',
     password: '',
   });
+
+  
   const { push } = useRouter(); //a função push redireciona o usuário p/ outra página, que nesse caso será a de Dashboard
 
   const handlerLogin = async (e) => {
@@ -25,6 +27,9 @@ export default function Login() {
       toast.error("Erro na aplicação!");
     }
   }
+
+
+
   return (
     <div className='LoginBox'>
       <div className='LoginContainer'>
