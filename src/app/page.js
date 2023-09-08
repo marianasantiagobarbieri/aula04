@@ -11,16 +11,16 @@ export default function Login() {
     email: '',
     password: '',
   });
-  const { push } = useRouter();
+  const { push } = useRouter(); //a função push redireciona o usuário p/ outra página, que nesse caso será a de Dashboard
 
   const handlerLogin = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); //previnindo o envio do fomrulário
     try {
       const userAuth = await handlerAcessUser(user);
       if (userAuth.token === undefined) {
         toast.error("Erro no e-mail ou na senha! :(");
       }
-      push('/pages/dashboard');
+      push('/pages/dashboard'); //redireciona o usuário p/ que após a ação do if o usuário vá p/ a página de Dashboard
     } catch {
       toast.error("Erro na aplicação!");
     }
