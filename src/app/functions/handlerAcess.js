@@ -14,8 +14,8 @@ const handlerAcessUser = async (user) => {
      return userAuth;
 
      /* Armazena o userAuth no localStorage, perguntar para o professor se está certo
-        localStorage.setItem("usuarioAutenticado", userAuth); ou
-        localStorage.usuarioAutenTicado = userAuth;
+        localStorage.setItem(userAuth, name); ou
+        localStorage.usuarioAutenTicado = name;
 
       // Para recuperar o dado
          document.getElementById().innerHTML =  localStorage.usuarioAutenTicado;

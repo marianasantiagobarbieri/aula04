@@ -13,7 +13,7 @@ export const metadata = {
 export default async function AlterDashboard() {
      
  function notificacao(userAuth){ //a função está quase dando certo
-  toast.success('Formulário enviado com sucesso :)')
+  toast.success('Formulário enviado com sucesso :)');
  }
   /* const { push } = useRouter(); //a função push redireciona o usuário p/ outra página, que nesse caso será a de Dashboard
 

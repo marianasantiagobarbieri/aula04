@@ -16,6 +16,7 @@ export const middleware = (request) => {
     } // resumo: se ñ tiver um token validado ou até mesmo se ñ tiver um token o usuário vai p/ a página Login/Home
     NextResponse.next(); //Se o houver um cookie token, o servidor permite prosseguir: indica p/ continuar a aoperação que foi solicitada pelo cliente
 };
+
 export const config = {
     matcher: ['/', '/pages/dashboard'] //configuração das rotas q o middleware vai controlar
 };
