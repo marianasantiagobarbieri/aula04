@@ -8,12 +8,12 @@ export default async function Dashboard() {
 
     return (
         <div className='LoginBox'>
-        <div className='LoginContainer'>
-          <h1>Usuários Cadastrados:</h1>
-          <Suspense fallback={<p>Carregando...</p>}>
-           <ListaDeUsuarios listar={listar}/>
-           </Suspense>
-        </div>
+            <div className='LoginContainer'>
+                <h1>Usuários Cadastrados:</h1>
+                <Suspense fallback={<p>Carregando...</p>}>
+                    <ListaDeUsuarios listar={listar} />
+                </Suspense>
+            </div>
         </div>
     )
 }

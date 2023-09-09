@@ -22,7 +22,7 @@ export default function DashboardLayout({ children }) {
                     <li><Link href="/pages/dashboard/alter"> Alterar </Link></li>
                     <li><Link href="/pages/dashboard/register"> Registrar</Link></li>
                 </ul>
-                
+
                 <button className="LoginBotaoSair2" onClick={sair}>Sair</button>
             </nav>
 

@@ -1,6 +1,7 @@
 'use server'
 import { NextResponse } from "next/server";
 import { validateToken } from "./app/functions/validateToken";
+import handlerAcessUser from "./app/functions/handlerAcess";
 
 export const middleware = (request) => {
 
@@ -19,4 +20,23 @@ export const config = {
     matcher: ['/', '/pages/dashboard'] //configuração das rotas q o middleware vai controlar
 };
 
+
+
+
 //para acessar a página de dashboard, é necessário um cookie com nome token.
+/*
+Dentro do arquivo middleware.js, estabeleça a seguinte 
+restrição: caso um usuário não autenticado tente acessar as 
+páginas "alter" e "register", ele será automaticamente 
+redirecionado para a página de login.
+
+
+//  const urlLoginDashboard = new URL('/pages/dashboard/alter', && '/pages/dashboard/register' request.url); //acessando a rota Alterar e Registrar
+    const isUsuarioAtenticado = validateUser(user);   
+
+     if (!isUsuarioAtenticado || !user) { 
+            return NextResponse.redirect(urlLoginDashboard); 
+        
+    } 
+    NextResponse.next();
+*/

@@ -19,7 +19,7 @@ export default async function AlterDashboard() {
     try {
       const userAuth = await handlerAcessUser(user);
       if (userAuth) {
-        toast.success("Alteração bem sucedida :)");
+        toast.success("Usuário alterado com sucesso :)");
       }
     } catch {
       toast.error("Erro na alteração, tente novamente :(");
