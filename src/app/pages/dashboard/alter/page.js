@@ -12,7 +12,10 @@ export const metadata = {
 
 export default async function AlterDashboard() {
      
-  const { push } = useRouter(); //a função push redireciona o usuário p/ outra página, que nesse caso será a de Dashboard
+ function notificacao(userAuth){ //a função está quase dando certo
+  toast.success('Formulário enviado com sucesso :)')
+ }
+  /* const { push } = useRouter(); //a função push redireciona o usuário p/ outra página, que nesse caso será a de Dashboard
 
   const handlerLoginAlter = async (e) => {
     e.preventDefault(); //previnindo o envio do fomrulário
@@ -24,14 +27,14 @@ export default async function AlterDashboard() {
     } catch {
       toast.error("Erro na alteração, tente novamente :(");
     }
-  }
+  }*/
 
 
     return (
         <div className='LoginBox'>
             <div className='LoginContainer'>
                 <h1>Alterar Usuário</h1>
-                <form onSubmit={handlerLoginAlter} className='LoginForm'>
+                <form className='LoginForm'>
                     <input
                         className='LoginInput'
                         placeholder='Nome:'
@@ -50,7 +53,7 @@ export default async function AlterDashboard() {
                         type='password'>
                     </input>
                     <span className='SpamAlter'></span>
-                    <button className='LoginBotaoAlterar'>Alterar</button>
+                    <button onClick={notificacao} className='LoginBotaoAlterar'>Alterar</button>
                 </form>
 
                 <ToastContainer />
