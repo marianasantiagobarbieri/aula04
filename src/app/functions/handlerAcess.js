@@ -3,20 +3,15 @@ import { validateToken } from "./validateToken";
 import { getUserAuthenticated } from "./handlerAcessAPI";
 
 const handlerAcessUser = async (user) => {
+  const userAuth = await getUserAuthenticated(user);
 
-    const userAuth = await getUserAuthenticated(user);
-    
-    const isTokenValidate = validateToken(userAuth.token);
+  const isTokenValidate = validateToken(userAuth.token);
 
-    if (isTokenValidate) {
-        Cookies.set('token', userAuth.token, { expires: 1 });
-    }
-     return userAuth;
-
-     //Armazena o userAuth no localStorage
-     localStorage.setItem(userAuth, name);    
-
-    
-}
+  if (isTokenValidate) {
+    //Após autenticar o usuário - userAuth -, armazena o name na localStorage
+    localStorage.setItem("name", userAuth.name);
+    Cookies.set("token", userAuth.token, { expires: 1 });
+  }
+  return userAuth;
+};
 export default handlerAcessUser;
-
