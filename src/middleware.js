@@ -7,6 +7,7 @@ export const middleware = (request) => {
 
     const token = request.cookies.get('token')?.value; //pegando o valor do cookie c/ nome token
     const urlLogin = new URL('/', request.url); //acessando a rota Login
+    const urlDashboard = new URL('/pages/dashboard', request.url); //acessando a rota Alterar e Registrar
     const isTokenValidated = validateToken(token); // informando o token e verificando se é válido
 
     if (!isTokenValidated || !token) { //se ñ tiver um retorno da verificação for falso ou se ñ tiver token
@@ -32,11 +33,11 @@ páginas "alter" e "register", ele será automaticamente
 redirecionado para a página de login.
 
 
-//  const urlLoginDashboard = new URL('/pages/dashboard/alter', && '/pages/dashboard/register' request.url); //acessando a rota Alterar e Registrar
+//  const urlDashboard = new URL('/pages/dashboard', request.url); //acessando a rota Alterar e Registrar
     const isUsuarioAtenticado = validateUser(user);   
 
      if (!isUsuarioAtenticado || !user) { 
-            return NextResponse.redirect(urlLoginDashboard); 
+            return NextResponse.redirect(urlDashboard); 
         
     } 
     NextResponse.next();
