@@ -1,6 +1,5 @@
 'use client'
 import handlerAcessUser from "@/app/functions/handlerAcess";
-import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,16 +13,13 @@ export default async function AlterDashboard() {
      
  /*function notificacao(userAuth){ //a função está quase dando certo
   toast.success('Formulário enviado com sucesso :)');
- }
-   const { push } = useRouter(); //a função push redireciona o usuário p/ outra página, que nesse caso será a de Dashboard*/
+ }*/
 
   const handlerLoginAlter = (e) => {
     e.preventDefault(); //previnindo o envio do fomrulário
     try {
-      const userAuth = handlerAcessUser(user);
-      if (userAuth) {
-        toast.success("Usuário alterado com sucesso :)");
-      }
+      toast.success("Usuário alterado com sucesso :)");
+      
     } catch {
       toast.error("Erro na alteração, tente novamente :(");
     }

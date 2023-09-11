@@ -1,4 +1,7 @@
-
+'use client'
+import handlerAcessUser from "@/app/functions/handlerAcess";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
     title: 'Register users',
@@ -8,11 +11,21 @@ export const metadata = {
 
 export default async function RegisterDashboard() {
 
+    const handlerLoginRegister = (e) => {
+        e.preventDefault(); //previnindo o envio do fomrulário
+        try {
+          toast.success("Usuário registrado com sucesso :)");
+          
+        } catch {
+          toast.error("Erro no registro, tente novamente :(");
+        }
+      }
+
     return (
         <div className='LoginBox'>
             <div className='LoginContainer'>
                 <h1>Registrar Usuário</h1>
-                <form /*onSubmit={handlerLogin}*/ className='LoginForm'>
+                <form className='LoginForm'>
                     <input
                         className='LoginInput'
                         placeholder='Nome:'
@@ -31,8 +44,12 @@ export default async function RegisterDashboard() {
                         type='password'>
                     </input>
                     <span className='SpamRegister'></span>
-                    <button className='LoginBotaoCRegistrar'>Registrar</button>
+                    <button onClick={handlerLoginRegister} className='LoginBotaoCRegistrar'>Registrar</button>
                 </form>
+
+                
+                <ToastContainer />
+
             </div>
         </div>
     )
