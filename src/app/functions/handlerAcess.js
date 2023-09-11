@@ -13,19 +13,10 @@ const handlerAcessUser = async (user) => {
     }
      return userAuth;
 
-     /* Armazena o userAuth no localStorage, perguntar para o professor se está certo
-        localStorage.setItem(userAuth, name); ou
-        localStorage.usuarioAutenTicado = name;
+     //Armazena o userAuth no localStorage
+     localStorage.setItem(userAuth, name);    
 
-      // Para recuperar o dado
-         document.getElementById().innerHTML =  localStorage.usuarioAutenTicado;
     
-     // Armazene o userAuth no localStorage (convertido em uma string)
-        localStorage.setItem("objetoChave", JSON.stringify(userAuth));
-
-    // Recupere o objeto do localStorage e converta-o de volta para um objeto
-    const objetoRecuperado = JSON.parse(localStorage.getItem("objetoChave"));
-     */
 }
 export default handlerAcessUser;
 
