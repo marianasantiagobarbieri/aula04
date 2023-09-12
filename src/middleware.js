@@ -23,7 +23,7 @@ export const middleware = (request) => {
 };
 
 export const config = {
-  matcher: ["/", "/pages/dashboard"], //configuração das rotas q o middleware vai controlar
+  matcher: ["/", "/pages/dashboard", "/pages/dashboard/register", "/pages/dashboard/alter"], //configuração das rotas q o middleware vai controlar
 };
 
 //para acessar a página de dashboard, é necessário um cookie com nome token.
