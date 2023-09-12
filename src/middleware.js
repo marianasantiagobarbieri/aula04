@@ -16,7 +16,7 @@ export const middleware = (request) => {
       request.nextUrl.pathname === "/pages/dashboard/register" ||
       request.nextUrl.pathname === "/pages/dashboard/alter"
     ) {
-      return NextResponse.redirect(urlLogin, urlDashboard); // usuário redirecionado p/ a página de Login/Home
+      return NextResponse.redirect(urlLogin); // usuário redirecionado p/ a página de Login/Home
     }
   } // resumo: se ñ tiver um token validado ou até mesmo se ñ tiver um token o usuário vai p/ a página Login/Home
   NextResponse.next(); //Se o houver um cookie token, o servidor permite prosseguir: indica p/ continuar a aoperação que foi solicitada pelo cliente
