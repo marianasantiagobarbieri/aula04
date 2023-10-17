@@ -1,10 +1,10 @@
 import { resolve } from "styled-jsx/css"
 
-export default async function ListaDeUsuarios({ listar }) {
+export default async function ListaDeUsuarios({ listaDeUsuarios }) {
   await new Promise((resolve) => setTimeout(resolve, 3000));
   return (
     <div>
-      {listar.map((user, index) => {
+      {listaDeUsuarios.map((user, index) => {
         return (
           <div key={index}>
             <p> Nome: {user.name}</p>
