@@ -37,14 +37,7 @@ export default function Login() {
         <h1>Login</h1>
 
         <form onSubmit={handlerLogin} className='LoginForm'>
-          <input
-            className='LoginInput'
-            placeholder='Nome:'
-            type="nome"
-            onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
-          </input>
-          <span className='SpamRegister'></span>
-
+         
           <input
             className='LoginInput'
             placeholder='E-mail'
