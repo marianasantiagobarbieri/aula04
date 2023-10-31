@@ -1,6 +1,8 @@
 import { resolve } from "styled-jsx/css"
 
 export default async function ListaDeUsuarios({ listaDeUsuarios }) {
+  console.log(listaDeUsuarios);
+  
   await new Promise((resolve) => setTimeout(resolve, 3000));
   return (
     <div>

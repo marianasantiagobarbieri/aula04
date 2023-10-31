@@ -16,9 +16,13 @@ const getUserAuthenticated = async (user) => {
 
 
 const getUsers = async () => {
+   try{
     const responseOfApiGET = await fetch(url + "/users");
     const listaDeUsuarios = await responseOfApiGET.json(); //formatando a informação p/ formato json
     return listaDeUsuarios;
+   }catch{
+      return [];
+   }
 }
 
 
