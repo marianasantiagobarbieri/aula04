@@ -1,7 +1,10 @@
 'use client'
-import handlerAcessUser from "@/app/functions/handlerAcess";
+import { postUser } from '@/app/functions/handlerAcessAPI';
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { resolve } from 'styled-jsx/css';
 
 export const metadata = {
     title: 'Register users',
@@ -11,11 +14,24 @@ export const metadata = {
 
 export default async function RegisterDashboard() {
 
-    const handlerLoginRegister = (e) => {
-        e.preventDefault(); //previnindo o envio do fomrulário
+    const [user, setUser ] = useState({
+        name: '',
+        email: '',
+        password: '',
+      });
+      const { push } = useRouter();
+
+
+
+    const handlerLoginRegister = async (event) => {
+        event.preventDefault(); //previnindo o envio do fomrulário
         try {
-          toast.success("Usuário registrado com sucesso :)");
-          
+          await postUser(user);
+          await new Promise((resolve) => {
+            toast.success("Usuário registrado com sucesso :)");
+            setTimeout(resolve, 5000);
+          });
+          return push("/pages/dashboard");          
         } catch {
           toast.error("Erro no registro, tente novamente :(");
         }
@@ -24,27 +40,36 @@ export default async function RegisterDashboard() {
     return (
         <div className='LoginBox'>
             <div className='LoginContainer'>
+
                 <h1>Registrar Usuário</h1>
-                <form className='LoginForm'>
+
+                <form onSubmit={handlerLoginRegister} className='LoginForm'>
                     <input
                         className='LoginInput'
                         placeholder='Nome:'
-                        type="nome">
+                        type="nome"
+                        onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
                     </input>
                     <span className='SpamRegister'></span>
+
                     <input
                         className='LoginInput'
                         placeholder='E-mail:'
-                        type="email">
+                        type="email"
+                        onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
                     </input>
                     <span className='SpamRegister'></span>
+
                     <input
                         className='LoginInput'
                         placeholder='Senha:'
-                        type='password'>
+                        type='password'
+                        onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
                     </input>
                     <span className='SpamRegister'></span>
-                    <button onClick={handlerLoginRegister} className='LoginBotaoCRegistrar'>Registrar</button>
+
+                    <button className='LoginBotaoCRegistrar'>Registrar</button>
+
                 </form>
 
                 
