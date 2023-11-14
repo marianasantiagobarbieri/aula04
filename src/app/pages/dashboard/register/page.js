@@ -29,7 +29,7 @@ export default async function RegisterDashboard() {
           await postUser(user);
           await new Promise((resolve) => {
             toast.success("Usuário registrado com sucesso :)");
-            setTimeout(resolve, 5000);
+            setTimeout(resolve, 2000);
           });
           return push("/pages/dashboard");          
         } catch {
