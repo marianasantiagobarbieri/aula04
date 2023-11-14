@@ -23,8 +23,8 @@ export default async function RegisterDashboard() {
 
 
 
-    const handlerLoginRegister = async (event) => {
-        event.preventDefault(); //previnindo o envio do fomrulário
+    const handlerLoginRegister = async (e) => {
+        e.preventDefault(); //previnindo o envio do fomrulário
         try {
           await postUser(user);
           await new Promise((resolve) => {
