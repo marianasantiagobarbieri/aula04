@@ -13,7 +13,7 @@ export default function Login() {
   });
 
   
-  const { push } = useRouter(); //a função push redireciona o usuário p/ outra página, que nesse caso será a de Dashboard
+  const { push, refresh } = useRouter(); //a função push redireciona o usuário p/ outra página, que nesse caso será a de Dashboard
 
   const handlerLogin = async (e) => {
     e.preventDefault(); //previnindo o envio do fomrulário
@@ -24,7 +24,7 @@ export default function Login() {
       }
       push('/pages/dashboard'); //redireciona o usuário p/ que após a ação do if o usuário vá p/ a página de Dashboard
     } catch {
-      toast.error("Erro na aplicação!");
+     refresh();
     }
   }
 
