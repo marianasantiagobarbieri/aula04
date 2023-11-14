@@ -11,6 +11,7 @@ const getUserAuthenticated = async (user) => {
      }
    );
    const userAuth = await responseOfApi.json(); //formatando a informação p/ formato json
+   console.log(userAuth);
    return userAuth;
 }//receber o usuario
 
