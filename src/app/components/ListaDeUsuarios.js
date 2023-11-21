@@ -9,7 +9,7 @@ export default async function ListaDeUsuarios({ listaDeUsuarios }) {
       {listaDeUsuarios.map((user, index) => {
         return (
           <div key={index}>
-            <p> Nome: {user.name}</p>
+            <p> Nome:<b> {user.name}</b></p>
           </div>
         )
       })}

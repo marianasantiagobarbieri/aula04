@@ -12,7 +12,7 @@ export const metadata = {
   }
 
 
-export default async function RegisterDashboard() {
+export default function RegisterDashboard() {
 
     const [user, setUser ] = useState({
         name: '',
