@@ -20,6 +20,7 @@ const getUsers = async () => {
    try{
     const responseOfApiGET = await fetch(url + "/users");
     const listaDeUsuarios = await responseOfApiGET.json(); //formatando a informação p/ formato json
+      console.log(listaDeUsuarios)
     return listaDeUsuarios;
    }catch{
       return [];

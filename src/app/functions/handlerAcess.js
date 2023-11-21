@@ -5,7 +5,7 @@ import { getUserAuthenticated } from "./handlerAcessAPI";
 const handlerAcessUser = async (user) => {
   const userAuth = await getUserAuthenticated(user);
 
-  const isTokenValidate = validateToken(userAuth.token);
+  const isTokenValidate = await validateToken(userAuth.token);
 
   if (isTokenValidate) {
     //Após autenticar o usuário - userAuth -, armazena o name na localStorage

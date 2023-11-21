@@ -21,6 +21,7 @@ export const middleware = async (request) => {
   } // resumo: se ñ tiver um token validado ou até mesmo se ñ tiver um token o usuário vai p/ a página Login/Home
 
   if(isTokenValidated) {
+    if(request.nextUrl.pathname === "/")
     return NextResponse.redirect(urlDashboard);
   }
   NextResponse.next(); //Se o houver um cookie token, o servidor permite prosseguir: indica p/ continuar a aoperação que foi solicitada pelo cliente

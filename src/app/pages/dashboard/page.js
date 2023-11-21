@@ -5,7 +5,6 @@ import '@/app/globals.css';
 
 export default async function Dashboard() {
     const listar = await getUsers();
-    console.log(listar);
 
     return (
         <div className='LoginBox'>
