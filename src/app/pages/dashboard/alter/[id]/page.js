@@ -73,7 +73,8 @@ export default function AlterDashboard( {params} ) {
                         placeholder='Senha:'
                         type='password'
                         value={user.password}
-                        onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
+                        onChange={(e) => { setUser({ ...user, password: e.target.value }) }}
+                        required>
                     </input>
                     <span className='SpamAlter'></span>
                     <button onClick={handlerLoginAlter} className='LoginBotaoAlterar'>Alterar</button>

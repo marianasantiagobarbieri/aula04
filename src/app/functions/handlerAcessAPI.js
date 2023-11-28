@@ -60,16 +60,15 @@ const uptadeUser = async (user, id) => {
  }
 }
 
-const getUser = async (user, id) => {
+const getUser = async (id) => {
    try  {
          const responseOfApi = await fetch(url + "/user/" + id, {
          method: "GET",
          headers: { "Content-Type": "application/json"},
-         body: JSON.stringify(user)
       });
     
-        const userUptade = await responseOfApi.json(); //formatando a informação p/ formato json
-        return userUptade;
+        const userGet = await responseOfApi.json(); //formatando a informação p/ formato json
+        return userGet;
  } catch{
    return null;
  }
