@@ -45,5 +45,20 @@ const postUser = async (user) => {
  }
 }
 
+const uptadeUser = async (user, id) => {
+   try  {
+         const responseOfApi = await fetch(url + "/user/" + id, {
+         method: "PUT",
+         headers: { "Content-Type": "application/json"},
+         body: JSON.stringify(user)
+      });
+    
+        const userUptade = await responseOfApi.json(); //formatando a informação p/ formato json
+        return userUptade;
+ } catch{
+   return null;
+ }
+}
 
-export { getUsers, getUserAuthenticated, postUser };
+
+export { getUsers, getUserAuthenticated, postUser, uptadeUser };

@@ -14,9 +14,6 @@ export default async function AlterDashboard() {
  /*function notificacao(userAuth){ //a função está quase dando certo
   toast.success('Formulário enviado com sucesso :)');
  }*/
-
- 
-
   const handlerLoginAlter = (e) => {
     e.preventDefault(); //previnindo o envio do fomrulário
     try {
