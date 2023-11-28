@@ -12,7 +12,7 @@ export const metadata = {
 }
 
 
-export default async function AlterDashboard( {params} ) {
+export default function AlterDashboard( {params} ) {
   
     const [user, setUser] = useState({
         name: '',
