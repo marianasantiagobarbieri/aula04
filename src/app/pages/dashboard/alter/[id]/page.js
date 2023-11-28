@@ -1,8 +1,8 @@
 'use client'
 import handlerAcessUser from "@/app/functions/handlerAcess";
-import { uptadeUser } from "@/app/functions/handlerAcessAPI";
+import { getUser, uptadeUser } from "@/app/functions/handlerAcessAPI";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -21,6 +21,14 @@ export default function AlterDashboard( {params} ) {
     });
 
     const { push } = useRouter();
+
+    useEffect(() => {
+        const findUser = async () => {
+            const userFind = await getUser(params.id);
+            setUser({ ...user, name: userFind.name, email: userFind.email});
+        }
+        findUser();
+    }, [])
 
 
   const handlerLoginAlter = async (e) => {
