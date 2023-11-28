@@ -8,6 +8,11 @@ body{
     font-family: Means Web,Georgia,Times,Times New Roman,serif;
 }
 
+.linkModificado{
+  text-decoration: none;
+  color: #000000;
+}
+
 .LoginBox {
     height: 100vh;
     background: #d8eacc;
